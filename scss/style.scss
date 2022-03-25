@@ -198,9 +198,9 @@ h1,h2,h3,h4,h5,h6,p,span,a {
             padding-bottom: 20px;
             display: flex; 
             flex-direction: column; 
-            width: 26%; 
+            width: 380px; 
             text-align: center;
-            @media(max-width: 600px) {
+            @media(max-width: 768px) {
                 width: 50%;
             }
         }
@@ -417,15 +417,17 @@ h1,h2,h3,h4,h5,h6,p,span,a {
         margin: auto;
         .work_content {
             display: flex;
-            justify-content: space-evenly;
+            flex-wrap: wrap;
+            justify-content: center;
             padding-top: 40px;
+            gap: 30px;
             @media(max-width: 600px) {
                 justify-content: center;
                 flex-wrap: wrap;
                 padding-top: 12px;
             }
             .work_date {
-                width: 40%;
+                width: 500px;
                 background: #2257BF;
                 padding: 20px;
                 border-radius: 20px;
