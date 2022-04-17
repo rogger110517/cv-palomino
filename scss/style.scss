@@ -10,6 +10,68 @@ a {
 h1,h2,h3,h4,h5,h6,p,span,a {
     font-family: 'Roboto', sans-serif;
 }
+.color-black {
+    color: #000000;
+}
+.color-white {
+    color: #ffffff;
+}
+.gap-30 {
+    gap: 30px;
+}
+.gap-60 {
+    gap: 50px;
+}
+.gap-100 {
+    gap: 100px;
+}
+.background__primary {
+    background-color: #020312;
+}
+h2 {
+    font-size: 48px;
+    @media(max-width: 600px) {
+        font-size: 25px;
+    }
+}
+h3 {
+    font-size: 30px;
+    @media(max-width: 600px) {
+        font-size: 18px;
+    }
+}
+// Template witch grid
+.template__grid__4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 600px)  {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 1200px)  {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+} 
+// Contenedor
+.container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+.container__primary__color {
+    background-color: #020312;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.container__primary {
+    background-color: #020312;
+}
 .content_color_portafolio {
     background-color: #003294;
 }
@@ -77,7 +139,7 @@ h1,h2,h3,h4,h5,h6,p,span,a {
     padding: 60px 0px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #003294;
+    background-color: #020312;
     @media(max-width: 600px) {
         padding: 30px 0px;
     }
@@ -128,6 +190,21 @@ h1,h2,h3,h4,h5,h6,p,span,a {
     margin: auto;
     @media(max-width: 600px) {
         padding-bottom: 10px;
+    }
+    &__title {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+        padding: 0px 20px;
+        &::before {
+            content: "";
+            background-color: #3c555a;
+            padding: 1.5px;
+            width: 40px;
+            position: absolute;
+            bottom: -12px;
+        }
     }
     .profile_content {
         display: flex;
@@ -182,69 +259,78 @@ h1,h2,h3,h4,h5,h6,p,span,a {
         }
     }
 }
-.skill_container {
-    background: #003294;
-    padding: 40px 0px 0px;
-    .skill {
+
+.skill {
+    
+    @media(max-width: 600px) {
+        padding: 30px 0px 0px;
+    }
+    &__title {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+        padding: 0px 20px;
+        &::before {
+            content: "";
+            background-color: #ffffff;
+            padding: 1.5px;
+            width: 40px;
+            position: absolute;
+            bottom: -12px;
+        }
+    }
+    .skill_content {
+        padding-top: 30px;
+        display: flex; 
+        flex-direction: column; 
+        text-align: center;
+        margin: auto;
+        @media(max-width: 768px) {
+            width: 50%;
+        }
+    }
+    .skill_information {
+        padding: 15px 0px;
+        p {
+            font-size: 18px;
+            color: #ffffff;
+            @media(max-width: 600px) {
+                font-size: 14px;
+            }
+        }
+    }
+    .skill_number {
         width: 100%;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        padding: 40px 0px;
-        @media(max-width: 600px) {
-            padding: 30px 0px 0px;
+        align-items: center;
+        position: relative;
+        p {
+            font-size: 20px;
+            color: #3c555a;
         }
-        .skill_content {
-            padding-bottom: 20px;
-            display: flex; 
-            flex-direction: column; 
-            width: 380px; 
+        .skill_number_circle {
             text-align: center;
-            @media(max-width: 768px) {
-                width: 50%;
-            }
-        }
-        .skill_information {
-            padding: 15px 0px;
-            p {
-                font-size: 18px;
-                color: #ffffff;
-                @media(max-width: 600px) {
-                    font-size: 14px;
-                }
-            }
-        }
-        .skill_number {
-            width: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            p {
-                font-size: 20px;
-                color: #3c555a;
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            border: 3px solid #2257BF;
+            background-color: #ffffff;
+            @media(max-width: 600px) {
+                width: 120px;
+                height: 120px;
             }
-            .skill_number_circle {
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 150px;
-                height: 150px;
-                border-radius: 100%;
-                border: 3px solid #2257BF;
-                background-color: #ffffff;
-                @media(max-width: 600px) {
-                    width: 120px;
-                    height: 120px;
-                }
-                p {
-                    color: #ffffff;
-                }
-                img {
-                    width: 110px;
-                    height: 110px;
+            p {
+                color: #ffffff;
+            }
+            img {
+                width: 110px;
+                height: 110px;
                     position: absolute;
                     top: 0;
                     bottom: 0;
@@ -259,12 +345,9 @@ h1,h2,h3,h4,h5,h6,p,span,a {
             }
         }
     }
-}
-.title.project {
-    color: #ffffff;
-    &::before {
-        background-color: #ffffff;
-    }
+
+h5 {
+    
 }
 .title.title_bland {
     color: #ffffff;
@@ -407,10 +490,23 @@ h1,h2,h3,h4,h5,h6,p,span,a {
 }
 .work_experience {
     padding: 40px 0px;  
-    background: #003294;
+    background: rgba(29,33,36,0.3);
     margin: auto; 
     @media(max-width: 600px) {
         padding: 10px 0px;  
+    }
+    &__title {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &::before {
+            content: "";
+            background-color: #ffffff;
+            padding: 1.5px;
+            width: 40px;
+            position: absolute;
+            bottom: -12px;
+        }
     }
     .work_experience_content {
         max-width: 1200px;
@@ -442,32 +538,43 @@ h1,h2,h3,h4,h5,h6,p,span,a {
 .projects {
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #00B2FF;
-    .projects_order {
+    background-color: #020312;
+    &__languaje {
+        margin-top: 40px;
+        padding: 10px;
+        background-color: #00B2FF;
+    }
+    &__title {
+        position: relative;
         display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-        padding-top: 60px;
-        justify-content: space-between;
-        @media(max-width: 600px) {
-            padding-top: 10px;
+        justify-content: center;
+        &::before {
+            content: "";
+            background-color: #ffffff;
+            padding: 1.5px;
+            width: 40px;
+            position: absolute;
+            bottom: -12px;
         }
-        .projects_order_content {
+    }
+    &__order {
+        padding-top: 50px;
+        @media(max-width: 600px) {
+            padding-top: 30px;
+        }
+        &__content {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 20%;
-            padding: 20px;
+            width: 100%;
             @media(max-width: 600px) {
                 width: 100%;
             }
             img {
                 width: 100%;
-                @media(max-width: 600px) {
-                    width: 200px;
-                }
+                object-fit: contain;
+                height: 60px;
+              
                 &:hover {
                     filter: opacity(0.5);
                     
